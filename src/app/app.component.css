@@ -1,0 +1,35 @@
+header {
+  background-color: #f4f4f4;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none; /* Usuwa podkreślenie tekstu */
+}
+
+.nav-button:hover {
+  background-color: #0056b3;
+}
+
+.header-nav a:hover {
+  color: #0056b3;
+}
+
+footer{
+  text-align: center;
+}

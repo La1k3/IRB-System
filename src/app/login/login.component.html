@@ -1,0 +1,10 @@
+<div>
+  <div class="login-container">
+    <img src="assets/logo.png" alt="Logo"/>
+    <form class="login-form" (ngSubmit)="login()">
+      <input type="text" [(ngModel)]="username" name="username" placeholder="Login">
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Hasło">
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
