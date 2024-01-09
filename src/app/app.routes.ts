@@ -9,6 +9,7 @@ import {ListaObecnosciComponent} from "./lista-obecnosci/lista-obecnosci.compone
 import {RaportFrekfencjiComponent} from "./raport-frekfencji/raport-frekfencji.component";
 import {SzkoleniaComponent} from "./szkolenia/szkolenia.component";
 import {UmundorowanieComponent} from "./umundorowanie/umundorowanie.component";
+import {WyprowiantowanieComponent} from "./wyprowiantowanie/wyprowiantowanie.component";
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -20,5 +21,6 @@ export const routes: Routes = [
   { path: 'raport-frekfencji', component: RaportFrekfencjiComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
   { path: 'szkolenia', component: SzkoleniaComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
   { path: 'umundorowanie', component: UmundorowanieComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
+  { path: 'wyprowiantowanie', component: WyprowiantowanieComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
