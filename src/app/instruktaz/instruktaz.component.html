@@ -1,0 +1,41 @@
+<h2>Zaplanuj instruktaż</h2>
+<form #instruktazForm="ngForm" (ngSubmit)="addInstruktaz(instruktazForm.value)">
+  <div>
+    <label for="dzien">Dzień:</label>
+    <input type="text" id="dzien" name="dzien" ngModel>
+  </div>
+
+  <div>
+    <label for="godzina">Godzina:</label>
+    <input type="text" id="godzina" name="godzina" ngModel>
+  </div>
+
+  <div>
+    <label for="nazwa">Nazwa:</label>
+    <input type="text" id="nazwa" name="nazwa" ngModel>
+  </div>
+
+  <div>
+    <label for="uwagi">Uwagi:</label>
+    <input type="text" id="uwagi" name="uwagi" ngModel>
+  </div>
+
+  <button type="submit">Dodaj Instruktaż</button>
+</form>
+
+
+<h1>Plan instruktaży na nadchodzące tygodnie</h1>
+<table>
+  <tr>
+    <th>Dzień</th>
+    <th>Godzina</th>
+    <th>Instruktaż</th>
+    <th>Uwagi</th>
+  </tr>
+  <tr *ngFor="let instruktaz of instruktaze">
+    <td>{{ instruktaz.dzien }}</td>
+    <td>{{ instruktaz.godzina }}</td>
+    <td>{{ instruktaz.nazwa }}</td>
+    <td>{{ instruktaz.uwagi }}</td>
+  </tr>
+</table>

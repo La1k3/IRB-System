@@ -10,6 +10,7 @@ import {RaportFrekfencjiComponent} from "./raport-frekfencji/raport-frekfencji.c
 import {SzkoleniaComponent} from "./szkolenia/szkolenia.component";
 import {UmundorowanieComponent} from "./umundorowanie/umundorowanie.component";
 import {WyprowiantowanieComponent} from "./wyprowiantowanie/wyprowiantowanie.component";
+import {InstruktazComponent} from "./instruktaz/instruktaz.component";
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent},
@@ -22,5 +23,6 @@ export const routes: Routes = [
   { path: 'szkolenia', component: SzkoleniaComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
   { path: 'umundorowanie', component: UmundorowanieComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
   { path: 'wyprowiantowanie', component: WyprowiantowanieComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
+  { path: 'instruktaz', component: InstruktazComponent, canActivate: [AuthGuard], data: { expectedRole: 'admin' } },
   { path: '', redirectTo: '/login', pathMatch: 'full' }
 ];
