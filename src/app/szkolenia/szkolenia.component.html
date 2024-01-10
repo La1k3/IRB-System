@@ -1,1 +1,26 @@
-<p>szkolenia works!</p>
+<div class="szkolenia-container">
+  <h2>Szkolenia</h2>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Jednostka</th>
+      <th>Data</th>
+      <th>Akcje</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let szkolenie of szkolenia; let i = index">
+      <td>{{ szkolenie.nazwa }}</td>
+      <td>{{ szkolenie.jednostka }}</td>
+      <td>{{ szkolenie.data }}</td>
+      <td>
+        <button (click)="usunSzkolenie(szkolenie.id)" class="usun-btn">Usuń szkolenie</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <button (click)="dodajSzkolenie()" class="dodaj-btn">Dodaj nowe szkolenie</button>
+</div>
