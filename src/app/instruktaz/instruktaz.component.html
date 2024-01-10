@@ -1,30 +1,29 @@
 <h2>Zaplanuj instruktaż</h2>
-<form #instruktazForm="ngForm" (ngSubmit)="addInstruktaz(instruktazForm.value)">
-  <div>
+<form #instruktazForm="ngForm" (ngSubmit)="addInstruktaz(instruktazForm.value); instruktazForm.reset()" class="center-form">
+  <div class="form-group">
     <label for="dzien">Dzień:</label>
     <input type="text" id="dzien" name="dzien" ngModel>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="godzina">Godzina:</label>
     <input type="text" id="godzina" name="godzina" ngModel>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="nazwa">Nazwa:</label>
     <input type="text" id="nazwa" name="nazwa" ngModel>
   </div>
 
-  <div>
+  <div class="form-group">
     <label for="uwagi">Uwagi:</label>
     <input type="text" id="uwagi" name="uwagi" ngModel>
   </div>
 
-  <button type="submit">Dodaj Instruktaż</button>
+  <button type="submit">Dodaj instruktaż</button>
 </form>
 
-
-<h1>Plan instruktaży na nadchodzące tygodnie</h1>
+<h2>Plan instruktaży na nadchodzące tygodnie</h2>
 <table>
   <tr>
     <th>Dzień</th>

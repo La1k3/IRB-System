@@ -35,7 +35,8 @@ export class InstruktazComponent {
       godzina: '12:00',
       nazwa: 'Instruktaż na wyjazd na urlop',
       uwagi: 'brak',
-    }];
+    }
+  ];
 
   addInstruktaz(newInstruktaz: Instruktaz) {
     this.instruktaze.push(newInstruktaz);

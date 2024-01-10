@@ -24,3 +24,15 @@ button {
   cursor: pointer;
   text-decoration: none; /* Usuwa podkreślenie tekstu */
 }
+
+.form-group {
+  margin-bottom: 10px; /* Dodaj dowolny odstęp między polami formularza */
+}
+
+.center-form {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
