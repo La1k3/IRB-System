@@ -1,1 +1,57 @@
-<p>wyprowiantowanie works!</p>
+<div class="container">
+  <h2>Lista wyprowiantowania</h2>
+  <form #soldierForm="ngForm" (ngSubmit)="addSoldier(soldierForm.value)">
+    <div>
+      <label for="rank">Stopień:</label>
+      <input type="text" id="rank" name="rank" ngModel required>
+    </div>
+    <div>
+      <label for="firstName">Imię:</label>
+      <input type="text" id="firstName" name="firstName" ngModel required>
+    </div>
+    <div>
+      <label for="lastName">Nazwisko:</label>
+      <input type="text" id="lastName" name="lastName" ngModel required>
+    </div>
+    <div>
+      <label for="exclusionDate">Data wyprowiantowania:</label>
+      <input type="date" id="exclusionDate" name="exclusionDate" ngModel required>
+    </div>
+    <div>
+      <label for="foodNorm">Norma żywienia:</label>
+      <select id="foodNorm" name="foodNorm" ngModel required>
+        <option *ngFor="let norm of foodNorms" [value]="norm.value">{{ norm.label }}</option>
+      </select>
+    </div>
+    <button type="submit">Dodaj żołnierza</button>
+  </form>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Lp.</th>
+      <th>Stopień</th>
+      <th>Imię</th>
+      <th>Nazwisko</th>
+      <th>Data wyprowiantowania</th>
+      <th>Norma żywienia</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let soldier of soldiers, let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ soldier.rank }}</td>
+      <td>{{ soldier.firstName }}</td>
+      <td>{{ soldier.lastName }}</td>
+      <td>{{ soldier.exclusionDate | date }}</td>
+      <td>{{ soldier.foodNorm }}</td>
+      <td>
+        <button (click)="removeSoldier(i)">Usuń</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="button-container">
+    <button class="create-order-button">Utwórz rozkaz</button>
+  </div>
+</div>

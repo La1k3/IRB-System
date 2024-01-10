@@ -1,0 +1,50 @@
+.container {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black; /* Dodaj ramkę do tabeli */
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid black; /* Dodaj ramkę do komórek tabeli */
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.create-order-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none; /* Usuwa podkreślenie tekstu */
+  margin: 0 10px; /* Dodaje margines do przycisku */
+}
+
+.create-order-button:hover {
+  background-color: #0056b3;
+}
