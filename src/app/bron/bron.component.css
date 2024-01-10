@@ -1,0 +1,37 @@
+.bron-container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.bron-container h2, .bron-container h3 {
+  text-align: center;
+}
+
+.bron-container div {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.bron-container p {
+  margin: 5px 0;
+}
+
+.bron-container button {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bron-container button:hover {
+  background-color: #0056b3;
+}

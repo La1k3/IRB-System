@@ -1,1 +1,21 @@
-<p>bron works!</p>
+<div class="bron-container">
+  <h2>Spis broni</h2>
+
+  <div *ngFor="let bron of bronie">
+    <h3>{{ bron.nazwa }} </h3>
+    <p>Typ broni: {{ bron.typ }}</p>
+    <p>Numer Serii: {{ bron.numerSerii }}</p>
+    <p>Numer Magazynu: {{ bron.nrMagazynu }}<p>
+    <p>Rodzja Amunicji: {{ bron.rodzajAmunicji }} </p>
+    <p>Status: {{ bron.status }}</p>
+    <p>Awarie: <span *ngFor="let awaria of bron.awarie">{{ awaria }}</span></p>
+    <p>Historia ewidencji:</p>
+    <div *ngFor="let wpis of bron.historiaEwidencji">
+      {{ wpis }}
+    </div>
+  </div>
+
+  <button (click)="generujRaport()">Generuj raport</button>
+  <button (click)="dodajBron()">Dodaj broń</button>
+  <button (click)="usunBron()">Usuń broń</button>
+</div>
