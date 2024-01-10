@@ -1,1 +1,88 @@
-<p>umundorowanie works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorty mundurowe</title>
+</head>
+<body>
+
+<h2 *ngIf="!showForm">Sorty mundurowe</h2>
+
+<div class="table-container" *ngIf="!showForm">
+  <table border="1">
+    <thead>
+    <tr>
+      <th>Stopień</th>
+      <th>Imię i Nazwisko</th>
+      <th>Mundur letni</th>
+      <th>Mundur zimowy</th>
+      <th>Buty wojskowe</th>
+      <th>Koszulki wz. Mon</th>
+      <th>Czapka</th>
+      <th>Rękawiczki</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>st.kpr.</td>
+      <td>Hubert Dankowski</td>
+      <td>Posiada</td>
+      <td>Posiada</td>
+      <td>Posiada</td>
+      <td>Posiada</td>
+      <td>Posiada</td>
+      <td>Posiada</td>
+    </tr>
+    <tr>
+      <td>plut.</td>
+      <td>Michał Brzoza</td>
+      <td>Posiada</td>
+      <td>Brak</td>
+      <td>Posiada</td>
+      <td>Posiada</td>
+      <td>Brak</td>
+      <td>Posiada</td>
+    </tr>
+    <tr>
+      <td>st.szer.</td>
+      <td>Grzegorz Floryda</td>
+      <td>Brak</td>
+      <td>Posiada</td>
+      <td>Brak</td>
+      <td>Posiada</td>
+      <td>Posiada</td>
+      <td>Brak</td>
+    </tr>
+    <!-- Dodaj więcej wierszy według potrzeb -->
+    </tbody>
+  </table>
+</div>
+
+<button type="button" *ngIf="!showForm" (click)="toggleForm()">Wyślij zgłoszenie o braku sortu do mundurówki</button>
+
+<div *ngIf="showForm">
+  <h3>Zgłoszenie braku sortu do mundurówki</h3>
+  <form (submit)="submitForm()">
+    <label>
+      Stopień:
+      <input type="text">
+    </label>
+    <br>
+    <label>
+      Imię i Nazwisko:
+      <input type="text">
+    </label>
+    <br>
+    <label>
+      Rodzaj sortu:
+      <input type="text">
+    </label>
+    <br>
+    <button type="submit">Wyślij zgłoszenie</button>
+  </form>
+</div>
+
+
+</body>
+</html>
