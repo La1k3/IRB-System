@@ -1,1 +1,21 @@
-<p>dodaj-zolnierza works!</p>
+<form class="form-container" #ZolnierzForm="ngForm" (ngSubmit)="onSubmit(ZolnierzForm.value)">
+  <label for="ranga">Stopień:</label>
+  <input type="text" id="ranga" formControlName="ranga">
+
+  <label for="imie">Imię:</label>
+  <input type="text" id="imie" formControlName="imie">
+
+  <label for="nazwisko">Nazwisko:</label>
+  <input type="text" id="nazwisko" formControlName="nazwisko">
+
+  <label for="numer_sluzbowy">Numer służbowy:</label>
+  <input type="text" id="numer_sluzbowy" formControlName="numer_sluzbowy">
+
+  <label for="numer_legitymacji">Numer legitymacji:</label>
+  <input type="text" id="numer_legitymacji" formControlName="numer_legitymacji">
+
+  <label for="stanowisko">Stanowisko:</label>
+  <input type="text" id="stanowisko" formControlName="stanowisko">
+
+  <button type="submit">Dodaj Żołnierza</button>
+</form>
