@@ -1,1 +1,35 @@
-<p>lista-obecnosci works!</p>
+<div class="flex-container">
+    <p-splitter [style]="{ height: '300px' }" styleClass="mb-5" layout="vertical" [panelSizes]="[20, 80]">
+        <ng-template pTemplate>
+            <div>
+                <span>Data: </span>{{ getCurrentDate() }}
+            </div>
+        </ng-template>
+        <ng-template pTemplate>
+            <p-table [value]="osoba">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th pSortableColumn="number"> Numer legitymacji <p-sortIcon field="number"></p-sortIcon></th>
+                        <th pSortableColumn="name"> Imie <p-sortIcon field="name"></p-sortIcon></th>
+                        <th pSortableColumn="surname"> Nazwisko <p-sortIcon field="surname"></p-sortIcon></th>
+                        <th pSortableColumn="rang" > Stopień <p-sortIcon field="rang"></p-sortIcon></th>
+                        <th pSortableColumn="presence"> Obecność <p-sortIcon field="rang"></p-sortIcon></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-osoba>
+                    <tr>
+                        <td>{{ osoba.number }}</td>
+                        <td>{{ osoba.name }}</td>
+                        <td>{{ osoba.surname }}</td>
+                        <td>{{ osoba.rang }}</td>
+                        <td>
+                            <div [ngClass]="{'presenceTrue': osoba.presence === true, 'presenceFalse': osoba.presence === false}">
+                                {{ getPresence(osoba.presence) }}
+                            </div>
+                        </td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </ng-template>
+    </p-splitter>
+</div>

@@ -1,0 +1,60 @@
+::ng-deep .p-table {
+    width: 100%;
+    margin-top: 20px;
+    border: 2px solid #000;
+    width: 20%;
+    white-space: nowrap;
+  }
+  
+  ::ng-deep .p-datatable thead tr th {
+    background-color: #3852e6;
+    border-color: #7179e6;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #000;
+  }
+
+  ::ng-deep .p-datatable thead tr th:hover {
+    background-color: hwb(0 20% 29%);
+  }
+
+  ::ng-deep .p-datatable tbody tr td {
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #000;
+  }
+
+  ::ng-deep .p-datatable tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+
+  ::ng-deep .p-datatable tbody tr:nth-child(even) {
+    background-color: #fff;
+  }
+
+  ::ng-deep .p-sortable-column .p-sort-icon {
+    font-size: 1em;
+    margin-left: 5px;
+  }
+  
+  .presenceTrue {
+    font-weight: 700;
+    color: green;
+  }
+
+  .presenceFalse {
+    font-weight: 700;
+    color: red;
+  }
+
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+  }
+
+  .p-splitter {
+    margin: 0 auto;
+  }
