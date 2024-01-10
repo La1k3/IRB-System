@@ -19,16 +19,22 @@ export interface Instruktaz {
 export class InstruktazComponent {
   instruktaze: Instruktaz[] = [
     {
-      dzien: '01-01-2022',
-      godzina: '17:00',
+      dzien: '11-03-2024',
+      godzina: '07:00',
       nazwa: 'Instruktaż na kompanię',
       uwagi: 'brak',
     },
     {
-      dzien: 'a',
-      godzina: 'a',
-      nazwa: 'a',
-      uwagi: 'a',
+      dzien: '15-02-2024',
+      godzina: '07:00',
+      nazwa: 'Instruktaż na kompanię',
+      uwagi: 'brak',
+    },
+    {
+      dzien: '21-05-2024',
+      godzina: '12:00',
+      nazwa: 'Instruktaż na wyjazd na urlop',
+      uwagi: 'brak',
     }];
 
   addInstruktaz(newInstruktaz: Instruktaz) {
