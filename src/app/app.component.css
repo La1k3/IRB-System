@@ -1,3 +1,13 @@
+html, body{
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
 header {
   background-color: #f4f4f4;
   padding: 10px 0;
@@ -30,6 +40,12 @@ header {
   color: #0056b3;
 }
 
+.router-outlet-container{
+  flex: 1;
+}
+
 footer{
   text-align: center;
 }
+
+
