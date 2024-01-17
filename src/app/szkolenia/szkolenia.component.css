@@ -45,7 +45,7 @@ button {
 }
 
 button.dodaj-btn {
-  background-color: #5cb85c;
+  background-color: #007bff;
   color: white;
 }
 
@@ -55,7 +55,7 @@ button.usun-btn {
 }
 
 button:hover {
-  opacity: 0.8;
+  background-color: #0056b3;
 }
 
 button:active {

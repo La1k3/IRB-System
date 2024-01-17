@@ -21,7 +21,17 @@ export interface Zolnierz {
 })
 export class DodajZolnierzaComponent {
 
+  zolnierzForm = new FormGroup({
+    ranga: new FormControl(''),
+    imie: new FormControl(''),
+    nazwisko: new FormControl(''),
+    numer_sluzbowy: new FormControl(''),
+    numer_legitymacji: new FormControl(''),
+    stanowisko: new FormControl('')
+  });
+
   onSubmit(newZolnierz : Zolnierz) {
     console.log(newZolnierz)
   }
+
 }

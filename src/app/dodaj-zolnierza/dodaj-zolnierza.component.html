@@ -1,4 +1,4 @@
-<form class="form-container" #ZolnierzForm="ngForm" (ngSubmit)="onSubmit(ZolnierzForm.value)">
+<form [formGroup]="zolnierzForm" class="form-container" #ZolnierzForm="ngForm" (ngSubmit)="onSubmit(ZolnierzForm.value)">
   <label for="ranga">Stopień:</label>
   <input type="text" id="ranga" formControlName="ranga">
 
