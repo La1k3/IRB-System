@@ -9,6 +9,7 @@ export interface Bron {
   rodzajAmunicji: string;
   status: string;
   numerSerii: string;
+  nrLegitymacji: number;
   awarie: string[];
   historiaEwidencji: string[];
 }
@@ -31,6 +32,7 @@ export class BronComponent {
       rodzajAmunicji: "7,62 x 39 mm",
       status: 'Sprawny',
       numerSerii: "1234",
+      nrLegitymacji: 1,
       awarie: ['Brak awarii'],
       historiaEwidencji: ['2023-01-01: Wprowadzono do magazynu','2023-01-15: Przegląd techniczny']
     },
@@ -42,6 +44,7 @@ export class BronComponent {
       rodzajAmunicji: "5,56 x 45 mm",
       status: 'W naprawie',
       numerSerii: "4321",
+      nrLegitymacji: 2,
       awarie: ['2023-03-12: Usterka spustu'],
       historiaEwidencji: ['2023-01-10: Wprowadzono do magazynu']
     }

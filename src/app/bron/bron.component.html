@@ -2,9 +2,10 @@
   <h2>Spis broni</h2>
 
   <div *ngFor="let bron of bronie">
-    <h3>{{ bron.nazwa }} </h3>
+    <p>Nazwa broni: {{ bron.nazwa }} </p>
     <p>Typ broni: {{ bron.typ }}</p>
     <p>Numer Serii: {{ bron.numerSerii }}</p>
+    <p>Numer Legitymacji Żołnierza: {{bron.nrLegitymacji}} </p>
     <p>Numer Magazynu: {{ bron.nrMagazynu }}<p>
     <p>Rodzja Amunicji: {{ bron.rodzajAmunicji }} </p>
     <p>Status: {{ bron.status }}</p>

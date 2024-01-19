@@ -27,4 +27,17 @@ export class AppComponent {
     this.authService.logout();
     this.router.navigate(['/login']);
   }
+
+  toggleChatbot(): void {
+    const chatbot = document.getElementById("chatbot");
+    if (chatbot) {
+        if (chatbot.classList.contains('hide-chatbot')) {
+            chatbot.classList.remove('hide-chatbot');
+            chatbot.classList.add('show-chatbot');
+        } else {
+            chatbot.classList.add('hide-chatbot');
+            chatbot.classList.remove('show-chatbot');
+        }
+    }
+}
 }
