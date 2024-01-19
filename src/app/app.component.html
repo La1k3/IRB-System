@@ -16,6 +16,29 @@
   <router-outlet></router-outlet>
 </div>
 
+<div class="chatbot-icon-container" (click)="toggleChatbot()" *ngIf="userRole === 'admin'">
+  <img src="assets/chat-icon.png" alt="Chat Icon" class="chatbot-icon">
+</div>
+
+<div class="chatbot hide-chatbot" id="chatbot" *ngIf="userRole === 'admin'">
+
+  <div class="chatbot-header">
+    <img src="assets/chat-icon.png" alt="Chat Icon" class="chatbot-icon">
+    <button class="chatbot-minimize-button" (click)="toggleChatbot()">-</button>
+  </div>
+
+  <div class="chatbot-messages">
+
+  </div>
+
+  <div class="chatbot-input">
+    <input type="text" id="chatInput" placeholder="Wpisz swoje zapytanie...">
+    <button id="sendButton">Wyślij</button>
+  </div>
+
+</div>
+
+
 <footer>
   <p>IRB System - WAT - 2023/2024</p>
 </footer>
