@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Wyprowiantowanie } from "./wyprowiantowanie.model";
+import { Wyprowiantowanie } from "../models/wyprowiantowanie.model";
 
 
 @Injectable({
