@@ -15,7 +15,7 @@ export class AuthService {
       this.isLoggedIn = true;
       this.userRole = 'user';
       return true;
-    } else if (username === 'admin' && password === 'admin') {
+    } else if (username === 'admin' && password === 'password321') {
       this.isLoggedIn = true;
       this.userRole = 'admin';
       return true;
