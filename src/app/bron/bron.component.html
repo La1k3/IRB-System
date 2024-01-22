@@ -1,22 +1,35 @@
 <div class="bron-container">
   <h2>Spis broni</h2>
 
-  <div *ngFor="let bron of bronie">
-    <p>Nazwa broni: {{ bron.nazwa }} </p>
-    <p>Typ broni: {{ bron.typ }}</p>
-    <p>Numer Serii: {{ bron.numerSerii }}</p>
-    <p>Numer Legitymacji Żołnierza: {{bron.nrLegitymacji}} </p>
-    <p>Numer Magazynu: {{ bron.nrMagazynu }}<p>
-    <p>Rodzja Amunicji: {{ bron.rodzajAmunicji }} </p>
-    <p>Status: {{ bron.status }}</p>
-    <p>Awarie: <span *ngFor="let awaria of bron.awarie">{{ awaria }}</span></p>
-    <p>Historia ewidencji:</p>
-    <div *ngFor="let wpis of bron.historiaEwidencji">
-      {{ wpis }}
+  <form [formGroup]="bronForm" (ngSubmit)="dodajBron()">
+    <input formControlName="nazwa" placeholder="Nazwa broni" required>
+    <input formControlName="typ" placeholder="Typ broni" required>
+    <input formControlName="nrMagazynu" placeholder="Numer Magazynu" required>
+    <input formControlName="rodzajAmunicji" placeholder="Rodzaj Amunicji" required>
+    <input formControlName="status" placeholder="Status" required>
+    <input formControlName="numerSerii" placeholder="Numer Serii" required>
+    <input formControlName="nrLegitymacji" placeholder="Nr Legitymacji" required>
+    <input formControlName="awarie" placeholder="Awarie (oddzielone przecinkami)">
+    <input formControlName="historiaEwidencji" placeholder="Historia ewidencji (oddzielone przecinkami)">
+    <button type="submit">Dodaj broń</button>
+  </form>
+
+  <!-- Lista broni z przyciskami "Usuń" -->
+  <div *ngFor="let bron of bronie; let i = index" class="bron-item">
+    <div>
+      <h3>Bron {{ i + 1 }}</h3>
+      <p>Nazwa broni: {{ bron.nazwa }}</p>
+      <p>Typ broni: {{ bron.typ }}</p>
+      <p>Numer Magazynu: {{ bron.nrMagazynu }}</p>
+      <p>Rodzaj Amunicji: {{ bron.rodzajAmunicji }}</p>
+      <p>Status: {{ bron.status }}</p>
+      <p>Numer Serii: {{ bron.numerSerii }}</p>
+      <p>Nr Legitymacji: {{ bron.nrLegitymacji }}</p>
+      <p>Awarie: {{ bron.awarie.join(', ') }}</p>
+      <p>Historia ewidencji: {{ bron.historiaEwidencji.join(', ') }}</p>
+      <button (click)="usunBron(bron.id)">Usuń broń</button>
     </div>
   </div>
 
   <button (click)="generujRaport()">Generuj raport</button>
-  <button (click)="dodajBron()">Dodaj broń</button>
-  <button (click)="usunBron()">Usuń broń</button>
 </div>

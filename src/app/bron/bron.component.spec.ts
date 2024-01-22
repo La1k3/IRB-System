@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { BronComponent } from './bron.component';
 
 describe('BronComponent', () => {
@@ -11,7 +10,7 @@ describe('BronComponent', () => {
       imports: [BronComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(BronComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

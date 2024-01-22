@@ -1,5 +1,9 @@
 import { Component} from '@angular/core';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import jsPDF from 'jspdf';
 import { CommonModule } from '@angular/common';
+import { NgForOf } from '@angular/common';
+;
 
 export interface Bron {
   id: number;
@@ -18,10 +22,10 @@ export interface Bron {
   selector: 'app-bron',
   templateUrl: './bron.component.html',
   styleUrls: ['./bron.component.css'],
-  imports: [CommonModule],
+  imports: [CommonModule, ReactiveFormsModule],
   standalone: true
-})
 
+})
 export class BronComponent {
   bronie: Bron[] = [
     {
@@ -34,7 +38,7 @@ export class BronComponent {
       numerSerii: "1234",
       nrLegitymacji: 1,
       awarie: ['Brak awarii'],
-      historiaEwidencji: ['2023-01-01: Wprowadzono do magazynu','2023-01-15: Przegląd techniczny']
+      historiaEwidencji: ['2023-01-01: Wprowadzono do magazynu', '2023-01-15: Przegląd techniczny']
     },
     {
       id: 2,
@@ -50,19 +54,68 @@ export class BronComponent {
     }
   ];
 
+  bronForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.bronForm = this.fb.group({
+      nazwa: ['', Validators.required],
+      typ: ['', Validators.required],
+      nrMagazynu: ['', Validators.required],
+      rodzajAmunicji: ['', Validators.required],
+      status: ['', Validators.required],
+      numerSerii: ['', Validators.required],
+      nrLegitymacji: ['', Validators.required],
+      awarie: [''],
+      historiaEwidencji: ['']
+    });
+  }
+
   generujRaport() {
+    const doc = new jsPDF();
+    const pageHeight = doc.internal.pageSize.height;
+    let y = 10;
 
+    const addText = (text: string, x: number, maxY: number) => {
+      const lines = doc.splitTextToSize(text, 180);
+      lines.forEach((line: string) => {
+        if (y > maxY) {
+          doc.addPage();
+          y = 10;
+        }
+        doc.text(line, x, y);
+        y += 10;
+      });
+    };
 
-    alert('Generowanie raportu...');
+    this.bronie.forEach((bron, index) => {
+      addText(`Bron ${index + 1}`, 10, pageHeight);
+      addText(`Nazwa: ${bron.nazwa}`, 10, pageHeight);
+      addText(`Typ: ${bron.typ}`, 10, pageHeight);
+      addText(`Numer Serii: ${bron.numerSerii}`, 10, pageHeight);
+      addText(`Nr Magazynu: ${bron.nrMagazynu}`, 10, pageHeight);
+      addText(`Rodzaj Amunicji: ${bron.rodzajAmunicji}`, 10, pageHeight);
+      addText(`Status: ${bron.status}`, 10, pageHeight);
+      addText(`Nr Legitymacji: ${bron.nrLegitymacji}`, 10, pageHeight);
+      addText(`Awarie: ${bron.awarie.join(', ')}`, 10, pageHeight);
+      addText(`Historia ewidencji: ${bron.historiaEwidencji.join(', ')}`, 10, pageHeight);
+      y += 10;
+    });
+
+    doc.save('raport.pdf');
   }
+
   dodajBron() {
-
-
-    alert('Dodawanie broni...');
+    const nowaBron = {
+      ...this.bronForm.value,
+      id: this.bronie.length > 0 ? Math.max(...this.bronie.map(bron => bron.id)) + 1 : 1,
+      awarie: this.bronForm.value.awarie.split(',').map((s: string) => s.trim()),
+      historiaEwidencji: this.bronForm.value.historiaEwidencji.split(',').map((s: string) => s.trim())
+    };
+    this.bronie.push(nowaBron);
+    this.bronForm.reset();
   }
-  usunBron() {
 
-
-    alert('Usuwanie broni...');
+  usunBron(id: number) {
+    this.bronie = this.bronie.filter(bron => bron.id !== id);
   }
 }
